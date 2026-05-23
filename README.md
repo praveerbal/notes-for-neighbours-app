@@ -1,56 +1,44 @@
-# Welcome to your Expo app 👋
+# Notes for Neighbours
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Notes for Neighbours is a nonprofit-focused mobile platform designed to improve access to music education and instruments for financially limited communities.
 
-## Get started
+The app helps connect donated instruments with students and families in need while also providing beginner-friendly educational resources and lesson content.
 
-1. Install dependencies
+## Features
 
-   ```bash
-   npm install
-   ```
+- User authentication
+- Instrument donation requests
+- Student application system
+- Admin review workflow
+- Educational music content
+- Instrument matching system
+- Cross-platform mobile support
 
-2. Start the app
+## Tech Stack
 
-   ```bash
-   npx expo start
-   ```
+- React Native
+- Expo
+- Firebase Authentication
+- Firestore
+- JavaScript
 
-In the output, you'll find options to open the app in a
+## Mission
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Many students are unable to participate in music programs due to financial barriers and lack of access to instruments.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Notes for Neighbours was created to help bridge that gap through community-driven donations, accessible educational tools, and centralized support resources.
 
-## Get a fresh project
+## Future Goals
 
-When you're ready, run:
+- Push notifications
+- AI-assisted educational support
+- Volunteer onboarding
+- Parent/guardian portal
+- Expanded lesson library
+- Community partnerships
+
+## Development
 
 ```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-### Other setup steps
-
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+npm install
+npx expo start
