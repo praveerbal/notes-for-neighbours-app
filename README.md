@@ -1,6 +1,6 @@
 # Notes for Neighbours
 
-Notes for Neighbours is a nonprofit-focused mobile platform designed to improve access to music education and instruments for financially limited communities.
+Notes for Neighbours is a mobile platform designed to improve access to music education and instruments for financially limited communities.
 
 The app helps connect donated instruments with students and families in need while also providing beginner-friendly educational resources and lesson content.
 
