@@ -15,9 +15,85 @@ import {
 } from "../services/userActivityService";
 import { styles } from "../styles/globalStyles";
 
-function StatusBadge({ status }) {
-  const label = status ? status.toUpperCase() : "PENDING";
+function getDonationStatusInfo(status) {
+  switch (status) {
+    case "pending":
+      return {
+        label: "Pending Review",
+        message:
+          "Your donation has been submitted and is waiting for review by Notes for Neighbours.",
+      };
 
+    case "approved":
+      return {
+        label: "Approved",
+        message:
+          "Your instrument has been approved and is now visible to applicants in the app.",
+      };
+
+    case "matched":
+      return {
+        label: "Matched",
+        message:
+          "Your instrument has been matched with a recipient. Notes for Neighbours will coordinate the next steps.",
+      };
+
+    case "delivered":
+      return {
+        label: "Delivered",
+        message:
+          "This donation has been completed. Thank you for helping make music more accessible.",
+      };
+
+    case "declined":
+      return {
+        label: "Declined",
+        message:
+          "This donation was not approved. This may be due to condition, safety, suitability, or current program needs.",
+      };
+
+    default:
+      return {
+        label: "Pending",
+        message:
+          "Your donation status is being updated. Please check back later.",
+      };
+  }
+}
+
+function getRequestStatusInfo(status) {
+  switch (status) {
+    case "pending":
+      return {
+        label: "Pending Review",
+        message:
+          "Your request has been submitted and is waiting for review by Notes for Neighbours.",
+      };
+
+    case "approved":
+      return {
+        label: "Approved",
+        message:
+          "You have been selected for this instrument. Notes for Neighbours will contact you with next steps.",
+      };
+
+    case "declined":
+      return {
+        label: "Declined",
+        message:
+          "This request was not selected. You may still be eligible for other instruments or future support.",
+      };
+
+    default:
+      return {
+        label: "Pending",
+        message:
+          "Your request status is being updated. Please check back later.",
+      };
+  }
+}
+
+function StatusBadge({ label }) {
   return (
     <View style={styles.statusPill}>
       <Text style={styles.statusPillText}>{label}</Text>
@@ -26,13 +102,12 @@ function StatusBadge({ status }) {
 }
 
 function DonationActivityCard({ donation }) {
+  const statusInfo = getDonationStatusInfo(donation.status);
+
   return (
     <View style={styles.activityCard}>
       {donation.imageUrl ? (
-        <Image
-          source={{ uri: donation.imageUrl }}
-          style={styles.activityImage}
-        />
+        <Image source={{ uri: donation.imageUrl }} style={styles.activityImage} />
       ) : (
         <View style={styles.activityImagePlaceholder}>
           <Text style={styles.activityImagePlaceholderText}>🎵</Text>
@@ -42,12 +117,14 @@ function DonationActivityCard({ donation }) {
       <View style={{ flex: 1 }}>
         <View style={styles.activityHeaderRow}>
           <Text style={styles.activityTitle}>{donation.instrumentType}</Text>
-          <StatusBadge status={donation.status} />
+          <StatusBadge label={statusInfo.label} />
         </View>
 
         <Text style={styles.activityMeta}>
           {donation.condition} • {donation.area}
         </Text>
+
+        <Text style={styles.statusMessage}>{statusInfo.message}</Text>
 
         <Text style={styles.activityText}>
           Preference: {donation.preference}
@@ -62,6 +139,8 @@ function DonationActivityCard({ donation }) {
 }
 
 function RequestActivityCard({ request }) {
+  const statusInfo = getRequestStatusInfo(request.status);
+
   return (
     <View style={styles.activityCard}>
       <View style={styles.activityImagePlaceholder}>
@@ -71,12 +150,14 @@ function RequestActivityCard({ request }) {
       <View style={{ flex: 1 }}>
         <View style={styles.activityHeaderRow}>
           <Text style={styles.activityTitle}>{request.instrumentName}</Text>
-          <StatusBadge status={request.status} />
+          <StatusBadge label={statusInfo.label} />
         </View>
 
         <Text style={styles.activityMeta}>
           Instrument area: {request.instrumentArea}
         </Text>
+
+        <Text style={styles.statusMessage}>{statusInfo.message}</Text>
 
         <Text style={styles.activityText}>
           Your area: {request.requesterArea}

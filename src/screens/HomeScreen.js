@@ -1,11 +1,27 @@
 import React from "react";
-import { ScrollView, Text, View } from "react-native";
+import { Alert, ScrollView, Text, View } from "react-native";
 
 import CardButton from "../components/CardButton";
 import Logo from "../components/Logo";
+import SecondaryButton from "../components/SecondaryButton";
+import { signOutUser } from "../services/authService";
 import { styles } from "../styles/globalStyles";
 
 export default function HomeScreen({ navigation }) {
+  const handleSignOut = async () => {
+    try {
+      await signOutUser();
+
+      navigation.reset({
+        index: 0,
+        routes: [{ name: "Onboarding" }],
+      });
+    } catch (error) {
+      console.log("Sign out error:", error);
+      Alert.alert("Sign out failed", error.message);
+    }
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.page}>
       <Logo />
@@ -42,16 +58,20 @@ export default function HomeScreen({ navigation }) {
       <CardButton
         emoji="🙋"
         title="Get Involved / Volunteer"
-        subtitle="Volunteer opportunities are coming soon."
-        onPress={() => navigation.navigate("ComingSoon", { type: "Volunteer" })}
+        subtitle="Apply to help with outreach, pickups, sorting, lessons, or events."
+        onPress={() => navigation.navigate("Volunteer")}
       />
 
       <CardButton
         emoji="🎹"
         title="Free Music Lessons"
-        subtitle="Beginner lessons and resources are coming soon."
-        onPress={() => navigation.navigate("ComingSoon", { type: "Lessons" })}
+        subtitle="Browse beginner music lessons and resources."
+        onPress={() => navigation.navigate("Lessons")}
       />
+
+      <View style={{ marginTop: 12 }}>
+        <SecondaryButton title="Sign Out" onPress={handleSignOut} />
+      </View>
     </ScrollView>
   );
 }

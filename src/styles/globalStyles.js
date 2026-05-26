@@ -607,5 +607,130 @@ export const styles = StyleSheet.create({
     fontWeight: "900",
     color: COLORS.navy,
   },
+    statusMessage: {
+    backgroundColor: "#EEF5FF",
+    borderColor: "#CFE1FF",
+    borderWidth: 1,
+    borderRadius: 14,
+    padding: 10,
+    fontSize: 13,
+    color: COLORS.gray,
+    lineHeight: 19,
+    marginBottom: 8,
+  },
+    lessonCard: {
+    backgroundColor: COLORS.white,
+    borderRadius: 22,
+    padding: 16,
+    marginBottom: 16,
+    borderWidth: 1,
+    borderColor: COLORS.lightGray,
+    flexDirection: "row",
+    shadowColor: COLORS.navy,
+    shadowOffset: { width: 0, height: 5 },
+    shadowOpacity: 0.08,
+    shadowRadius: 8,
+    elevation: 3,
+  },
+
+  lessonIconBox: {
+    width: 68,
+    height: 68,
+    borderRadius: 18,
+    marginRight: 14,
+    backgroundColor: COLORS.lightGold,
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 1,
+    borderColor: COLORS.gold,
+  },
+
+  lessonIcon: {
+    fontSize: 30,
+  },
+
+  lessonTitle: {
+    fontSize: 18,
+    fontWeight: "900",
+    color: COLORS.navy,
+    marginBottom: 5,
+  },
+
+  lessonMeta: {
+    fontSize: 14,
+    color: COLORS.blue,
+    fontWeight: "800",
+    marginBottom: 6,
+  },
+
+  lessonDescription: {
+    fontSize: 13,
+    color: COLORS.gray,
+    lineHeight: 19,
+    marginBottom: 8,
+  },
+
+  lessonLinkText: {
+    fontSize: 13,
+    color: COLORS.gold,
+    fontWeight: "900",
+  },
+    lessonHeaderRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+    gap: 8,
+    marginBottom: 4,
+  },
+
+  completedPill: {
+    backgroundColor: "#EAF8EF",
+    borderColor: "#BDE8C8",
+    borderWidth: 1,
+    paddingVertical: 5,
+    paddingHorizontal: 8,
+    borderRadius: 999,
+  },
+
+  completedPillText: {
+    color: COLORS.success,
+    fontSize: 10,
+    fontWeight: "900",
+  },
+
+  lessonCompletedText: {
+    marginTop: 10,
+    color: COLORS.success,
+    fontWeight: "800",
+    fontSize: 13,
+    lineHeight: 19,
+  },
+
+  progressBox: {
+    backgroundColor: COLORS.white,
+    borderRadius: 20,
+    padding: 18,
+    borderWidth: 1,
+    borderColor: COLORS.lightGray,
+    marginBottom: 14,
+    shadowColor: COLORS.navy,
+    shadowOffset: { width: 0, height: 5 },
+    shadowOpacity: 0.07,
+    shadowRadius: 8,
+    elevation: 2,
+  },
+
+  progressTitle: {
+    fontSize: 18,
+    fontWeight: "900",
+    color: COLORS.navy,
+    marginBottom: 5,
+  },
+
+  progressText: {
+    fontSize: 15,
+    color: COLORS.blue,
+    fontWeight: "800",
+  },
 });
 
